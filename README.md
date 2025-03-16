@@ -4,3 +4,5 @@
 - Use "io.coil-kt:coil:2.5.0" to load images.
 - Use DataBinding + MutableLiveData.
 - Use viewModelScope to update the UI from the API.
+- 
+- 由於園區只顯示該園區的動物但列表從0開始撈，如果該區動物位置在列表第40，每一次撈20筆就要撈兩次
