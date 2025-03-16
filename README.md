@@ -1,19 +1,6 @@
-Adapter 更新 :<br>
-DiffCallback
-
-圖片URL:<br>
-class BindingAdapters {
-    companion object {
-        @JvmStatic
-        @BindingAdapter("imageUrl")
-        fun ImageView.loadImage(url: String?) {
-            url?.let {
-                val urlText = it.replace("http:", "https:")
-                this.load(urlText) {
-                    placeholder(R.drawable.ic_download)
-                    error(R.drawable.ic_launcher_foreground)
-                }
-            }
-        }
-    }
-}
+- Use Jetpack Compose Navigation.
+- Update the user list using DiffCallback every time you scroll to the bottom.
+- Use setFragmentResult to pass information between fragments.
+- Use "io.coil-kt:coil:2.5.0" to load images.
+- Use DataBinding + MutableLiveData.
+- Use viewModelScope to update the UI from the API.

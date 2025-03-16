@@ -35,9 +35,11 @@ class HomeFragment: BaseFragment(), AdapterListener {
 
             dataBinding!!.parkRV.layoutManager = LinearLayoutManager(getBaseActivity()!!)
 
+            showProgressView()
             viewModel.getListApi(getBaseActivity()!!)
 
             viewModel.parkData.observe(viewLifecycleOwner) { parkData ->
+                dismissProgressView()
                 dataBinding!!.parkRV.adapter = CardAdapter(parkData, this)
             }
         }

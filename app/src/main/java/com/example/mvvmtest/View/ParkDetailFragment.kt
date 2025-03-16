@@ -42,10 +42,12 @@ class ParkDetailFragment: BaseFragment(), AdapterListener {
 
             // 當offset變化打動物資料API
             viewModel.offset.observe(viewLifecycleOwner) { offset ->
+                showProgressView()
                 viewModel.getAnimalListApi(getBaseActivity()!!, offset)
             }
             //當動物列表有變化更新recyclerView
             viewModel.animalData.observe(viewLifecycleOwner) { animalData ->
+                dismissProgressView()
                 if (dataBinding!!.recyclerView.adapter == null) {
                     dataBinding!!.recyclerView.adapter = AnimalAdapter(this)
                 }
